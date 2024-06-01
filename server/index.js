@@ -55,8 +55,7 @@ app.get("/auth/callback", async (request, response) => {
 
 app.get("/auth/login", (request, response) => {
     console.log('GET /auth/login')
-    const url = new URL(`${request.protocol}://${request.get('host')}${request.originalUrl}`);
-    const redirect_uri = `${url.origin}/auth/callback`;
+    const redirect_uri = `${config.BASE_URL}/auth/callback`;
     console.log(redirect_uri)
 
     return response.redirect(`https://github.com/login/oauth/authorize?client_id=${config.GITHUB_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=repo`);
