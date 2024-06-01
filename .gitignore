@@ -13,6 +13,7 @@ dist-ssr
 coverage
 *.local
 *.vars
+*.env
 
 
 wrangler.toml
