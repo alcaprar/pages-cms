@@ -7,6 +7,8 @@ const __dirname = import.meta.dirname;
 
 const app = express();
 
+const SERVER_PORT = config.SERVER_PORT || 3000;
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
   });
@@ -89,6 +91,6 @@ app.get("/auth/revoke", async (request, response) => {
       return response.status(200).send("Token revoked");
 })
 
-app.listen(3000, () => {
-    console.log("Listen on the port 3000...");
+app.listen(SERVER_PORT, () => {
+    console.log(`Listen on the port ${SERVER_PORT}...`);
 });
