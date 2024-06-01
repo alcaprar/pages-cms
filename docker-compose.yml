@@ -3,9 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # image: ghcr.io/alcaprar/pagescms:latest
     ports: 
-      - "8788:8788"
-      - "5173:5173"
+      - "3001:3001"
     environment:
-      - GITHUB_CLIENT_ID=FILL_IN
-      - GITHUB_CLIENT_SECRET=FILL_IN
+      - SERVER_PORT=3001
+      - GITHUB_CLIENT_ID=Ov23lizf1MrBLbVjp005
+      - GITHUB_CLIENT_SECRET=51795afaff57e22d4c7f3a0e35a4fbbcca597338
